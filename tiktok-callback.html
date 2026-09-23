@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scarf - TikTok Connected</title>
+<style>
+body { font-family: -apple-system, Arial, sans-serif; background:#1a0b2e; color:#fff; display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; }
+.card { max-width:520px; padding:32px; background:#2a1550; border-radius:16px; text-align:center; }
+code { display:block; word-break:break-all; background:#12082a; padding:16px; border-radius:8px; margin:16px 0; font-size:14px; color:#c9b3ff; }
+button { background:#8e2de2; color:#fff; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-size:14px; }
+p { color:#cbb8e8; }
+</style>
+</head>
+<body>
+<div class="card">
+<h2>TikTok connected</h2>
+<p>Copy this code and paste it back into Scarf's setup prompt:</p>
+<code id="code">(no code in URL)</code>
+<button onclick="navigator.clipboard.writeText(document.getElementById('code').textContent)">Copy code</button>
+<p>You can close this tab once you've copied it.</p>
+</div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const code = params.get('code');
+if (code) {
+  document.getElementById('code').textContent = code;
+}
+</script>
+</body>
+</html>
